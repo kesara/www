@@ -29,9 +29,11 @@ def social_menu(site):
     social = SocialMediaSettings.for_site(site)
     links = [
         {"url": social.linkedin, "icon": "linkedin", "title": "LinkedIn"},
+        {"url": social.facebook, "icon": "facebook", "title": "Facebook"},
+        {"url": social.bluesky, "icon": "bluesky", "title": "Bluesky"},
         {"url": social.twitter, "icon": "twitter", "title": "Twitter"},
-        {"url": social.youtube, "icon": "youtube", "title": "YouTube"},
         {"url": social.mastodon, "icon": "mastodon", "title": "Mastodon"},
+        {"url": social.youtube, "icon": "youtube", "title": "YouTube"},
         {"url": social.github, "icon": "github", "title": "GitHub"},
     ]
     return filter(itemgetter("url"), links)
