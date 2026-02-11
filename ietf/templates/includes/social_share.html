@@ -9,27 +9,6 @@
     
     <{{ heading|default:"h2"}} class="h4">Share this page</{{ heading|default:"h2"}}>
 
-    {% comment %}
-    {% spaceless %}
-    <a
-        class="me-2 h2"
-        aria-label="Share on Facebook"
-        title="Share on Facebook"
-        href="https://www.facebook.com/dialog/feed?app_id={{ social_media_settings.facebook_app_id }}&amp;link={{ page.full_url|urlencode }}&amp;picture={% social_image page current_site %}&amp;name={{ page.title|urlencode }}&amp;description={% social_text page current_site 'True '%}&amp;redirect_uri={{ page.full_url|urlencode }}"
-    >
-        <i class="bi bi-facebook"></i>
-    </a>
-    {% endspaceless %}
-    {% endcomment %}
-    {% spaceless %}
-    <a
-        class="me-2 h2"
-        title="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text={% social_text page current_site 'True' %}&amp;url={{ page.full_url|urlencode }}&amp;via={{ social_media_settings.twitter_handle|urlencode }}"
-    >
-        <i class="bi bi-twitter"></i>
-    </a>
-    {% endspaceless %}
     {% spaceless %}
     <a
         class="me-2 h2"
@@ -37,6 +16,21 @@
         href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.full_url|urlencode }}&amp;title={{ page.title|urlencode }}&amp;summary={% social_text page current_site 'True' %}&amp;source={{ social_media_settings.site_name|urlencode }}"
     >
         <i class="bi bi-linkedin"></i>
+    </a>
+    <a
+        class="me-2 h2"
+        aria-label="Share on Facebook"
+        title="Share on Facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url|urlencode }}"
+    >
+        <i class="bi bi-facebook"></i>
+    </a>
+    <a
+        class="me-2 h2"
+        title="Share on Bluesky"
+        href="https://bsky.app/intent/compose?text={{ page.title|urlencode }}%20{{ page.full_url|urlencode}}"
+    >
+        <i class="bi bi-bluesky"></i>
     </a>
     {% endspaceless %}
 {% endwith %}

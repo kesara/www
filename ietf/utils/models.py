@@ -229,16 +229,6 @@ class FooterColumn(PreviewableMixin, models.Model):
 
 @register_setting
 class SocialMediaSettings(BaseSiteSetting):
-    twitter_handle = models.CharField(
-        max_length=255,
-        help_text="Your Twitter username without the @, e.g. flickr",
-        blank="True",
-    )
-    facebook_app_id = models.CharField(
-        max_length=255,
-        help_text="Your Facebook app id",
-        blank="True",
-    )
     default_sharing_text = models.CharField(
         max_length=255,
         blank="True",
@@ -303,8 +293,6 @@ class SocialMediaSettings(BaseSiteSetting):
     )
 
     panels = [
-        FieldPanel("twitter_handle"),
-        FieldPanel("facebook_app_id"),
         FieldPanel("default_sharing_text"),
         FieldPanel("default_sharing_image"),
         FieldPanel("site_name"),
